@@ -1,0 +1,14 @@
+.user-photos {
+  width: 100%;
+}
+
+.user-photo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.user-photo-stepper-info {
+  margin-left: 8px;
+}

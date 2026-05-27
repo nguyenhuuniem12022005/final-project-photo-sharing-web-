@@ -1,0 +1,21 @@
+.topbar-appBar {
+  height: 64px;
+  justify-content: center;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar-toggle {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-right: 0 !important;
+}
+
+.topbar-toggle .MuiFormControlLabel-label {
+  font-size: 1rem;
+}
