@@ -29,6 +29,9 @@ export default fetchModel;
 
 export async function postJson(url, body) {
   const path = url.startsWith("/") ? url : `/${url}`;
+  if (path === "/admin/login") {
+    console.log("[login] POST", `${API_BASE}${path}`);
+  }
   const response = await fetch(`${API_BASE}${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

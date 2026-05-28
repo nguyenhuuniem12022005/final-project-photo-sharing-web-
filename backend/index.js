@@ -12,10 +12,13 @@ const PhotosRouter = require("./routes/PhotosRouter");
 
 dbConnect();
 
+const frontendOrigin = process.env.FRONTEND_ORIGIN || "http://localhost:3000";
+const isSecureOrigin = frontendOrigin.startsWith("https://");
+
 app.set("trust proxy", 1);
 app.use(
   cors({
-    origin: process.env.FRONTEND_ORIGIN || "http://localhost:3000",
+    origin: frontendOrigin,
     credentials: true,
   })
 );
@@ -29,7 +32,8 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: isSecureOrigin ? "none" : "lax",
+      secure: isSecureOrigin,
     },
   })
 );
